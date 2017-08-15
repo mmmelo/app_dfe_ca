@@ -1,0 +1,30 @@
+.menu_top_logo{
+    width: 180px!important;
+}
+
+.header-menu{
+    margin: 3%;
+}
+
+.search-field{
+    position: absolute!important;
+    right: 300px!important;
+}
+.search-menu{
+    position: absolute!important;
+    right: 0!important;
+}
+
+
+.color-input-field{
+    color: #000000 !important;
+}
+
+
+.vec-img{
+    max-width: 50px!important;
+    max-height: 50px!important;
+    border-radius:50%;
+    background-color: #ffffff;
+
+}

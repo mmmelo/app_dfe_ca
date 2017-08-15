@@ -1,0 +1,68 @@
+<div ng-cloak>
+
+    <md-toolbar class="md-hue-2">
+        <div class="md-toolbar-tools">
+
+            <img class="menu_top_logo" src="../../image/logo.png">
+
+        </div>
+    </md-toolbar>
+
+    <md-card>
+
+        <md-card-header>
+            <div class="header-menu" layout="row">
+                <dic flex="20">
+                    <md-button class="md-raised md-primary" ui-sref="veiculo">Novo Carro</md-button>
+                </dic>
+                <div flex="80" class="search-field">
+                    <md-input-container md-no-float class="md-block">
+                        <input ng-model="search_field" type="text" placeholder="Pesquisar" >
+                        <i class="material-icons md-24 md-light search-menu" ng-click="search(search_field)" >search</i>
+                    </md-input-container>
+                </div>
+            </div>
+        </md-card-header>
+        <md-card-title>
+
+
+        </md-card-title>
+
+        <md-card-content>
+
+
+            <div ng-init="getCarList()">
+                <md-list>
+                    <md-list-item layout="row">
+                        <p flex="10">Placa</p>
+                        <p flex="20">Modelo</p>
+                        <p flex="20">Marca</p>
+                        <p flex="30">Foto</p>
+                        <p flex="20">Combustivel</p>
+                        <p flex="20">Valor</p>
+                    </md-list-item>
+                    <md-divider></md-divider>
+                    <md-list-item ng-repeat="veiculo in veiculos" ng-click="goToVeiculo(veiculo.id)" >
+                        <p flex="10">{{veiculo.placa}}</p>
+                        <p flex="20">{{veiculo.modelo}}</p>
+                        <p flex="20">{{veiculo.marca}}</p>
+                        <!--<p flex="50">{{veiculo.foto}}</p>-->
+                        <img flex="30" class="md-user-avatar vec-img" ng-src="{{veiculo.foto}}" onerror="this.src='http://coloring.thecolor.com/color/images/Porsche-911.gif'">
+                        <p flex="20">{{veiculo.combustivel}}</p>
+                        <p flex="20">{{veiculo.valor}}</p>
+                        <md-divider></md-divider>
+                    </md-list-item>
+                </md-list>
+            </div>
+
+        </md-card-content>
+
+        <md-card-footer>
+            <section layout="row" layout-padding="">
+
+                <cl-paging flex cl-pages="paging.total" , cl-steps="3" , cl-page-changed="paging.onPageChanged()" , cl-align="center center" , cl-current-page="paging.current"></cl-paging>
+
+            </section>
+        </md-card-footer>
+    </md-card>
+</div>

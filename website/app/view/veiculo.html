@@ -1,0 +1,91 @@
+<div>
+    <md-toolbar class="md-hue-2">
+        <div class="md-toolbar-tools">
+
+            <img class="menu_top_logo" src="../../image/logo.png">
+
+        </div>
+    </md-toolbar>
+
+    <md-card>
+
+        <md-card-header>
+            <div class="header-menu" layout="row">
+                <dic flex="30">
+                    <md-button class="md-raised md-warn" ui-sref="/">Voltar</md-button>
+                </dic>
+                <dic flex="30">
+                    <md-button class="md-raised md-primary" ng-click="veiculoUpd(vec)">Save</md-button>
+                </dic>
+                <div flex="30" ng-show="btnDeletarShow">
+                    <md-button class="md-raised md-accent" ng-click="veiculoDel(vec)">Deletar</md-button>
+                </div>
+
+            </div>
+        </md-card-header>
+
+        <md-card-content ng-init="getCarList()" layout-padding>
+
+            <md-input-container class="md-block">
+
+                <form name="form_vec">
+                    <div layout="row">
+                        <md-input-container flex="50">
+                            <label>Placa</label>
+                            <input required name="placa" ng-model="vec.placa" class="color-input-field">
+                            <div ng-messages="form_vec.placa.$error">
+                            <div ng-message="required">Obrigatorio.</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container flex="50">
+                            <label>Modelo</label>
+                            <input required name="modelo" ng-model="vec.modelo" class="color-input-field">
+                            <div ng-messages="form_vec.modelo.$error">
+                            <div ng-message="required">Obrigatorio.</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container flex="50">
+                            <label>Marca</label>
+                            <input required name="marca" ng-model="vec.marca" class="color-input-field">
+                            <div ng-messages="form_vec.marca.$error">
+                            <div ng-message="required">Obrigatorio.</div>
+                            </div>
+                        </md-input-container>
+                    </div>
+
+                    <div layout="row">
+                        <div flex="50">
+                            <img class="md-user-avatar" ng-src="{{vec.foto}}" onerror="this.src='http://coloring.thecolor.com/color/images/Porsche-911.gif'">
+                        </div>
+
+                        <md-input-container flex="50">
+                            <label>Foto</label>
+                            <input required name="foto" ng-model="vec.foto" class="color-input-field">
+                            <div ng-messages="form_vec.foto.$error">
+                            <div ng-message="required">Obrigatorio.</div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                    <div layout="row">
+                        <md-input-container flex="50"  class="md-block">
+                            <label>Combustivel</label>
+                            <md-select name="combustivel" ng-model="vec.combustivel" required>
+                                <md-option value="flex">Flex</md-option>
+                                <md-option value="gasolina">Gasolina</md-option>
+                                <md-option value="alcool">Alcool</md-option>
+                                <md-option value="diesel">Diesel</md-option>
+                            </md-select>
+                        </md-input-container>
+                        <md-input-container flex="50"  class="md-block">
+                            <label>Valor</label>
+                            <input required name="valor" ng-model="vec.valor" class="color-input-field" >
+                        </md-input-container>
+                    </div>
+
+                </form>
+            </md-input-container>
+
+        </md-card-content>
+    </md-card>
+
+</div>

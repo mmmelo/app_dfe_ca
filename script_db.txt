@@ -1,0 +1,13 @@
+CREATE DATABASE `dfe_ca` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+
+CREATE TABLE `veiculos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `placa` varchar(7) DEFAULT NULL,
+  `marca` varchar(45) DEFAULT NULL,
+  `modelo` varchar(45) DEFAULT NULL,
+  `combustivel` varchar(45) DEFAULT NULL,
+  `valor` varchar(20) DEFAULT NULL,
+  `foto` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
